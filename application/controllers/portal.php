@@ -4,7 +4,10 @@ class Portal extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('portal');
+		$data['pageTitle'] = 'Testing This';
+		$data['mainBlock'] = 'portal';
+		$data['test'] = 'imma echo';
+		$this->load->view('/inc/container', $data);
 	}
 }
 
