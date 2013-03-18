@@ -5,7 +5,9 @@
 </div>
 
 <div class="sidebar">
-	test
+	<div data-role="content">
+	<h3>Sidebar Stuffs</h3>
+</div>
 </div>
 
-<?php // $this->load->view('/inc/footer'); ?>
+<?php $this->load->view('/inc/footer'); ?>

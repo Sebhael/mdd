@@ -1,0 +1,535 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"backg",
+				"background-color"
+			],
+			[
+				"delt",
+				"deltaLong"
+			],
+			[
+				"del",
+				"deltaLong"
+			],
+			[
+				"delta",
+				"deltaLat"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "application/views/portal.php",
+			"settings":
+			{
+				"buffer_size": 67,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "application/views/inc/footer.php",
+			"settings":
+			{
+				"buffer_size": 89,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/portal.php",
+			"settings":
+			{
+				"buffer_size": 381,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test/taskmanager.css",
+			"settings":
+			{
+				"buffer_size": 66114,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/controllers/games.php",
+			"settings":
+			{
+				"buffer_size": 6695,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/main.css",
+			"settings":
+			{
+				"buffer_size": 792,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/inc/container.php",
+			"settings":
+			{
+				"buffer_size": 193,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/inc/header.php",
+			"settings":
+			{
+				"buffer_size": 611,
+				"line_ending": "Windows",
+				"name": "<!DOCTYPE html>"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/E/wamp/www/vinti/module/Application/src/Application/Controller/IndexController.php",
+		"/E/wamp/www/vinti/app/Controller/AppController.php",
+		"/E/wamp/www/vinti/module/Application/Module.php",
+		"/E/wamp/www/vinti/module/Application/view/layout/layout.phtml",
+		"/C/Users/Sebhael/Desktop/vinti_ssh.ppk",
+		"/E/wamp/www/mdd/application/views/inc/main.css",
+		"/E/wamp/www/1mdd/mainnav.html",
+		"/E/wamp/www/1mdd/index.html",
+		"/E/wamp/www/1mdd/header.html",
+		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/views/includes/container.php",
+		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/views/games/index.php",
+		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/views/portal.php",
+		"/E/wamp/www/mdd/application/views/inc/container",
+		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/views/includes/header.php",
+		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/views/auth_register.php",
+		"/E/wamp/www/mdd/application/controllers/welcome.php",
+		"/E/wamp/www/mdd/application/views/welcome_message.php",
+		"/E/wamp/www/mdd/application/config/routes.php",
+		"/E/wamp/www/mdd/application/controllers/portal.php",
+		"/E/wamp/www/mdd/index.html",
+		"/E/wamp/www/mdd/application/config/config.php",
+		"/C/Users/Sebhael/Desktop/aCW",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/index.css",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/index.template 2.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/index.template.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/Display.template.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/Subs.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/Subs-Boards.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/Subs-BoardIndex.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/BoardIndex.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/Subs-Menu.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/cssdm.cfg",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/server.cfg",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/sourcemod.cfg",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/cssdm.weapons.txt",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/adminmenu_custom.txt",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/plugin_settings.cfg",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/core.cfg",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/cssdm.games.txt",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/dm_basics.smx",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/default.cfg",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/game.cfg",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/dreamportal.css",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/index 3.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/script.php",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/index 2.php",
+		"/E/wamp/www/vforum/Themes/vinti/css/index.css",
+		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/index.php",
+		"/E/wamp/www/vforum/Themes/minimal_20rc4/css/index.css",
+		"/E/wamp/www/vforum/Themes/minimal_20rc4/Display.template.php",
+		"/E/wamp/www/vforum/Themes/minimal_20rc4/index.template.php",
+		"/E/wamp/www/vforum/Themes/minimal_20rc4/css/index.php",
+		"/E/wamp/www/ose/index.php",
+		"/E/wamp/www/ose/nav.php",
+		"/C/Users/Sebhael/Desktop/handler_inuse.php",
+		"/E/wamp/www/ose/events.php",
+		"/E/wamp/www/ose/req/footer.html",
+		"/E/wamp/www/ose/req/search.php",
+		"/E/wamp/www/ose/gvcs.php",
+		"/E/wamp/www/ose/req/style.css",
+		"/C/Users/Sebhael/Desktop/handler.php",
+		"/E/wamp/www/ose/req/header.html",
+		"/E/wamp/www/mdd/test.php",
+		"/E/wamp/www/ose/join.php",
+		"/E/wamp/www/ose/about.php",
+		"/E/wamp/www/mdd/mobile.html",
+		"/E/wamp/www/ose/blog.php",
+		"/E/wamp/www/mdd/mainnav.html",
+		"/E/wamp/www/mdd/header.html",
+		"/E/wamp/www/mdd/footer.html",
+		"/E/wamp/www/mdd/Core Content"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<?",
+			"manu_menu",
+			"template_h",
+			"menu",
+			"floatleft",
+			"firstlevel",
+			"titlebg",
+			"upshrink",
+			"collapse",
+			".collapse",
+			"a.collapse",
+			"collapse",
+			"h3.catbg",
+			"collapse",
+			".catbg",
+			"catbg",
+			"expand",
+			"gif",
+			"expand",
+			"main_menu",
+			"wra",
+			";\n",
+			"wrapper",
+			"800px",
+			">\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "application/views/portal.php",
+					"settings":
+					{
+						"buffer_size": 67,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								36,
+								36
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "application/views/inc/footer.php",
+					"settings":
+					{
+						"buffer_size": 89,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								81,
+								81
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "application/controllers/portal.php",
+					"settings":
+					{
+						"buffer_size": 381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								381,
+								381
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test/taskmanager.css",
+					"settings":
+					{
+						"buffer_size": 66114,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 28.0,
+						"translation.y": 450.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/controllers/games.php",
+					"settings":
+					{
+						"buffer_size": 6695,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1158,
+								1158
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "test/main.css",
+					"settings":
+					{
+						"buffer_size": 792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								791,
+								791
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "application/views/inc/container.php",
+					"settings":
+					{
+						"buffer_size": 193,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								193,
+								193
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "application/views/inc/header.php",
+					"settings":
+					{
+						"buffer_size": 611,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								279,
+								279
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<!DOCTYPE html>",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
