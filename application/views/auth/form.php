@@ -7,6 +7,9 @@
 	    <fieldset data-role="collapsible" data-theme="a">
 	        <legend>Register for an Account</legend>
 	        	<h2>You surely have one of these...</h2>
+	        	<p>
+	        		One (ok, maybe like 3) click registration!
+	        	</p>
 	        	<ul data-role="listview">
 	        		<li><a href="#">Twitter</a></li>
 	        		<li><a href="#">Facebook</a></li>

@@ -24,18 +24,26 @@
 	"buffers":
 	[
 		{
-			"file": "application/views/portal.php",
+			"file": "application/views/inc/header.php",
 			"settings":
 			{
-				"buffer_size": 67,
+				"buffer_size": 1715,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "test/main.css",
+			"settings":
+			{
+				"buffer_size": 876,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "application/views/inc/footer.php",
+			"file": "application/views/auth/form.php",
 			"settings":
 			{
-				"buffer_size": 89,
+				"buffer_size": 1516,
 				"line_ending": "Windows"
 			}
 		},
@@ -43,49 +51,16 @@
 			"file": "application/controllers/portal.php",
 			"settings":
 			{
-				"buffer_size": 381,
+				"buffer_size": 582,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "test/taskmanager.css",
+			"file": "application/config/config.php",
 			"settings":
 			{
-				"buffer_size": 66114,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/controllers/games.php",
-			"settings":
-			{
-				"buffer_size": 6695,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/main.css",
-			"settings":
-			{
-				"buffer_size": 792,
+				"buffer_size": 12831,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/views/inc/container.php",
-			"settings":
-			{
-				"buffer_size": 193,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "application/views/inc/header.php",
-			"settings":
-			{
-				"buffer_size": 611,
-				"line_ending": "Windows",
-				"name": "<!DOCTYPE html>"
 			}
 		}
 	],
@@ -113,6 +88,21 @@
 	},
 	"file_history":
 	[
+		"/E/wamp/www/mdd/application/config/config.php",
+		"/E/wamp/www/mdd/.htaccess",
+		"/E/wamp/www/mdd/test/taskmanager.css",
+		"/C/Users/Sebhael/Desktop/.htaccess",
+		"/E/wamp/www/mdd/application/controllers/auth.php",
+		"/E/wamp/www/mdd/application/views/inc/container.php",
+		"/E/wamp/www/mdd/test/main.css",
+		"/E/wamp/www/mdd/application/views/portal.php",
+		"/E/wamp/www/1mdd/mobile.html",
+		"/E/wamp/www/mdd/application/views/inc/footer.php",
+		"/E/wamp/www/mdd/application/controllers/portal.php",
+		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/controllers/games.php",
+		"/E/wamp/www/mdd/application/views/inc/header.php",
+		"/E/wamp/www/1mdd/index.html",
+		"/E/wamp/www/1mdd/header.html",
 		"/E/wamp/www/vinti/module/Application/src/Application/Controller/IndexController.php",
 		"/E/wamp/www/vinti/app/Controller/AppController.php",
 		"/E/wamp/www/vinti/module/Application/Module.php",
@@ -120,8 +110,6 @@
 		"/C/Users/Sebhael/Desktop/vinti_ssh.ppk",
 		"/E/wamp/www/mdd/application/views/inc/main.css",
 		"/E/wamp/www/1mdd/mainnav.html",
-		"/E/wamp/www/1mdd/index.html",
-		"/E/wamp/www/1mdd/header.html",
 		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/views/includes/container.php",
 		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/views/games/index.php",
 		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/views/portal.php",
@@ -131,9 +119,7 @@
 		"/E/wamp/www/mdd/application/controllers/welcome.php",
 		"/E/wamp/www/mdd/application/views/welcome_message.php",
 		"/E/wamp/www/mdd/application/config/routes.php",
-		"/E/wamp/www/mdd/application/controllers/portal.php",
 		"/E/wamp/www/mdd/index.html",
-		"/E/wamp/www/mdd/application/config/config.php",
 		"/C/Users/Sebhael/Desktop/aCW",
 		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/index.css",
 		"/C/Users/Sebhael/AppData/Local/Temp/fz3temp-1/index.template 2.php",
@@ -243,55 +229,57 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/views/portal.php",
+					"file": "application/views/inc/header.php",
 					"settings":
 					{
-						"buffer_size": 67,
+						"buffer_size": 1715,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								36,
-								36
+								1057,
+								1057
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "application/views/inc/footer.php",
+					"file": "test/main.css",
 					"settings":
 					{
-						"buffer_size": 89,
+						"buffer_size": 876,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								81,
-								81
+								552,
+								552
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -301,23 +289,24 @@
 				},
 				{
 					"buffer": 2,
-					"file": "application/controllers/portal.php",
+					"file": "application/views/auth/form.php",
 					"settings":
 					{
-						"buffer_size": 381,
+						"buffer_size": 1516,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								381,
-								381
+								329,
+								329
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -327,131 +316,50 @@
 				},
 				{
 					"buffer": 3,
-					"file": "test/taskmanager.css",
+					"file": "application/controllers/portal.php",
 					"settings":
 					{
-						"buffer_size": 66114,
+						"buffer_size": 582,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								443,
+								443
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 28.0,
-						"translation.y": 450.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/controllers/games.php",
+					"file": "application/config/config.php",
 					"settings":
 					{
-						"buffer_size": 6695,
+						"buffer_size": 12831,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1158,
-								1158
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "test/main.css",
-					"settings":
-					{
-						"buffer_size": 792,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								791,
-								791
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "application/views/inc/container.php",
-					"settings":
-					{
-						"buffer_size": 193,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								193,
-								193
+								908,
+								908
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "application/views/inc/header.php",
-					"settings":
-					{
-						"buffer_size": 611,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								279,
-								279
-							]
-						],
-						"settings":
-						{
-							"auto_name": "<!DOCTYPE html>",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -495,7 +403,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.971751412429,
 			1.0
 		],
 		"rows":
@@ -527,9 +435,9 @@
 		"width": 0.0
 	},
 	"show_minimap": true,
-	"show_open_files": false,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 282.0,
 	"status_bar_visible": true
 }

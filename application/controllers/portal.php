@@ -18,7 +18,7 @@ class Portal extends CI_Controller {
 	public function nav()
 	{
 		$data['pageTitle'] = 'Navigation';
-		$data['mainBlock'] = '/inc/nav';
+		$data['mainBlock'] = 'nav';
 		$this->load->view('/inc/container', $data);
 	}
 }
