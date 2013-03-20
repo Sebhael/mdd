@@ -1,0 +1,5 @@
+http://www.dannyherran.com/2011/02/facebook-php-sdk-and-codeigniter-for-basic-user-authentication/
+
+http://stackoverflow.com/questions/10106327/how-to-use-facebook-php-sdk-in-codeigniter
+
+https://github.com/facebook/facebook-php-sdk
