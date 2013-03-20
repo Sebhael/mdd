@@ -13,6 +13,10 @@ h2 { color: #e1c140; text-shadow: 1px 1px 0 #000000;  }
 .ui-content { width: 900px;}
 #login-btn { background: #509836; }
 
+.user-box {
+	float: right;
+}
+
 /* 
 Breakpoint @ 576px
 Everything will assume a standard "desktop" view here.	

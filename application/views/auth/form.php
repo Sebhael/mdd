@@ -1,5 +1,4 @@
 <style>
-#nav-btn { display: none; }
 #back-btn { display: block; }
 </style>
 	<div class="content">
@@ -11,9 +10,9 @@
 	        		One (ok, maybe like 3) click registration!
 	        	</p>
 	        	<ul data-role="listview">
-	        		<li><a href="#">Twitter</a></li>
-	        		<li><a href="#">Facebook</a></li>
-	        		<li><a href="#">Google ID</a></li>
+	        		<li><a href="#" class="ui-disabled">Twitter</a></li>
+	        		<li><a href="auth/facebook">Facebook</a></li>
+	        		<li><a href="#" class="ui-disabled">Google ID</a></li>
 	        	</ul>
 	        	<h2>Ol' Fashioned Method</h2>
 				<label for="username">Desired Username</label>
@@ -25,7 +24,7 @@
 				<input type="submit" value="Register" data-theme="g">
 	    </fieldset>
 	</form>
-	<form>
+	<form action="auth/process" method="post" data-ajax="false">
 	    <fieldset data-role="collapsible" data-collapsed="false" data-theme="a">
 	        <legend>Login</legend>
 	        	<em>You know the drill, gimmie your</em>
