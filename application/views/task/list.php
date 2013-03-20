@@ -18,7 +18,7 @@
 
     <li data-role="list-divider">Recently Closed <span class="ui-li-count">1</span></li>
 
-    <li><a href="index.html">
+    <li><a href="<?php echo base_url(); ?>task/listing" data-transition="slide">
         <h2>TaskManager: Listing View</h2>
         <img src="<?php echo base_url(); ?>test/task_ico.png" />
         <p>Obviously complete, else you wouldn't be looking at this right now! Also has an icon, oooooh...</p>

@@ -24,43 +24,62 @@
 	"buffers":
 	[
 		{
-			"file": "application/views/inc/header.php",
+			"file": "application/controllers/auth.php",
 			"settings":
 			{
-				"buffer_size": 1715,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "test/main.css",
-			"settings":
-			{
-				"buffer_size": 876,
+				"buffer_size": 1611,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "application/views/auth/form.php",
+			"file": "application/models/facebook_model.php",
 			"settings":
 			{
-				"buffer_size": 1516,
+				"buffer_size": 806,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/controllers/portal.php",
+			"file": "application/views/task/list.php",
 			"settings":
 			{
-				"buffer_size": 582,
+				"buffer_size": 1275,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "application/config/config.php",
+			"contents": "<style>\n#back-btn { display: block; }\n</style>\n	<div class=\"content\">\n		<form>\n			<label for=\"title\">Title</label>\n				<input type=\"text\" id=\"title\" name=\"title\" />\n			<label for=\"notes\">Notes</label>\n				<textarea></textarea>\n\n			<a href=\"#\" data-role=\"button\" data-inline=\"true\">Pick A Time?</a>\n				<span class=\"time-display\"></span>\n			<label for=\"is-due\">Due Date?</label>\n				<select name=\"is-due\" id=\"is-due\" data-role=\"slider\">\n	    			<option value=\"off\" selected=\"\">No</option>\n	    			<option value=\"on\">Yes</option>\n				</select>\n			<div id=\"due-hide\">\n				<label for=\"duedate\">Due Date</label>\n				<input type=\"date\" name=\"duedate\" id=\"duedate\" value=\"\">\n			</div>\n\n			<fieldset data-role=\"controlgroup\" data-type=\"horizontal\" data-mini=\"false\">\n		    <legend>Want to share this list?</legend>\n		        <input type=\"radio\" name=\"radio-choice-b\" id=\"radio-choice-c\" value=\"list\" checked=\"checked\">\n		        <label for=\"radio-choice-c\">Private</label>\n		        <input type=\"radio\" name=\"radio-choice-b\" id=\"radio-choice-d\" value=\"grid\">\n		        <label for=\"radio-choice-d\">Groups</label>\n		        <input type=\"radio\" name=\"radio-choice-b\" id=\"radio-choice-e\" value=\"gallery\">\n		        <label for=\"radio-choice-e\">Public</label>\n			</fieldset>\n			<p>\n				<input type=\"submit\" name=\"addtask\" id=\"addtask\" value=\"Add Task\" />\n			</p>\n		</form>\n	</div><!-- /content -->\n\n	<style>#due-hide { display:none;}</style>\n	<script>\n	$('#is-due').change(function(){\n		var dueswitch = $(this);\n		var show = dueswitch[0].selectedIndex == 1 ? true:false;\n		$('#due-hide').toggle(show);\n	})\n	</script>",
+			"file": "application/views/task/add_form.php",
+			"file_size": 1675,
+			"file_write_time": 130082010020000000,
 			"settings":
 			{
-				"buffer_size": 12831,
+				"buffer_size": 1602,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/controllers/task.php",
+			"settings":
+			{
+				"buffer_size": 823,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/task/listing.php",
+			"settings":
+			{
+				"buffer_size": 258,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "application/views/inc/header.php",
+			"settings":
+			{
+				"buffer_size": 1894,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -89,18 +108,19 @@
 	"file_history":
 	[
 		"/E/wamp/www/mdd/application/config/config.php",
+		"/E/wamp/www/mdd/application/controllers/portal.php",
+		"/E/wamp/www/mdd/application/views/auth/form.php",
+		"/E/wamp/www/mdd/test/main.css",
+		"/E/wamp/www/mdd/application/views/inc/header.php",
 		"/E/wamp/www/mdd/.htaccess",
 		"/E/wamp/www/mdd/test/taskmanager.css",
 		"/C/Users/Sebhael/Desktop/.htaccess",
 		"/E/wamp/www/mdd/application/controllers/auth.php",
 		"/E/wamp/www/mdd/application/views/inc/container.php",
-		"/E/wamp/www/mdd/test/main.css",
 		"/E/wamp/www/mdd/application/views/portal.php",
 		"/E/wamp/www/1mdd/mobile.html",
 		"/E/wamp/www/mdd/application/views/inc/footer.php",
-		"/E/wamp/www/mdd/application/controllers/portal.php",
 		"/C/Users/Sebhael/Dropbox/Vinticuffs/TheRetroDojo (Old files)/dev.theretrodojo.com/application/controllers/games.php",
-		"/E/wamp/www/mdd/application/views/inc/header.php",
 		"/E/wamp/www/1mdd/index.html",
 		"/E/wamp/www/1mdd/header.html",
 		"/E/wamp/www/vinti/module/Application/src/Application/Controller/IndexController.php",
@@ -229,56 +249,55 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "application/views/inc/header.php",
+					"file": "application/controllers/auth.php",
 					"settings":
 					{
-						"buffer_size": 1715,
+						"buffer_size": 1611,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1057,
-								1057
+								74,
+								5
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "test/main.css",
+					"file": "application/models/facebook_model.php",
 					"settings":
 					{
-						"buffer_size": 876,
+						"buffer_size": 806,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								552,
-								552
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -289,24 +308,23 @@
 				},
 				{
 					"buffer": 2,
-					"file": "application/views/auth/form.php",
+					"file": "application/views/task/list.php",
 					"settings":
 					{
-						"buffer_size": 1516,
+						"buffer_size": 1275,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								329,
-								329
+								1275,
+								1275
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -316,18 +334,18 @@
 				},
 				{
 					"buffer": 3,
-					"file": "application/controllers/portal.php",
+					"file": "application/views/task/add_form.php",
 					"settings":
 					{
-						"buffer_size": 582,
+						"buffer_size": 1602,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								443,
-								443
+								37,
+								8
 							]
 						],
 						"settings":
@@ -343,23 +361,79 @@
 				},
 				{
 					"buffer": 4,
-					"file": "application/config/config.php",
+					"file": "application/controllers/task.php",
 					"settings":
 					{
-						"buffer_size": 12831,
+						"buffer_size": 823,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								908,
-								908
+								823,
+								823
 							]
 						],
 						"settings":
 						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 45.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "application/views/task/listing.php",
+					"settings":
+					{
+						"buffer_size": 258,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								251,
+								251
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
 							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "application/views/inc/header.php",
+					"settings":
+					{
+						"buffer_size": 1894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1681,
+								1681
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
