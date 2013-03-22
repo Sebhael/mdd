@@ -21,6 +21,27 @@ class Portal extends CI_Controller {
 		$data['mainBlock'] = 'nav';
 		$this->load->view('/inc/container', $data);
 	}
+
+	public function support()
+	{
+		$data['pageTitle'] = 'Need Help?';
+		$data['mainBlock'] = 'support';
+		$this->load->view('/inc/container', $data);
+	}
+
+	public function copyright()
+	{
+		$data['pageTitle'] = 'Copyright Information';
+		$data['mainBlock'] = 'copyright';
+		$this->load->view('/inc/container', $data);
+	}
+
+	public function tos()
+	{
+		$data['pageTitle'] = 'Terms of Service';
+		$data['mainBlock'] = 'terms';
+		$this->load->view('/inc/container', $data);		
+	}
 }
 
 /* End of file portal.php */

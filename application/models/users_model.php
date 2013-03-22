@@ -20,13 +20,24 @@ class Users_model extends CI_Model {
 		$this->db->where('password', $password);
 		$query = $this->db->get('users');
 
-		if ( $query->num_rows() != 1 )
+		if ( $query->num_rows() < 1 )
 		{
 			return FALSE;
 		}
 		else
 		{
-			return $query->row();
+			return $query->row_array();
 		}
+	}
+
+	public function insert()
+	{
+		$sql = array();
+	}
+
+	public function get_profile($id)
+	{
+		$sql = $this->db->get_where('users', array('users.id' => $id));
+		return $sql->row_array();
 	}
 }

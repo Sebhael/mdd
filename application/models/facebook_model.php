@@ -6,8 +6,8 @@ class Facebook_model extends CI_model {
 		parent::__construct();
 
 		$config = array(
-			'appId' => '',
-			'secret' => '',
+			'appId' => '118757384981558',
+			'secret' => 'b8661a50b28b325634ea1fceb6d31572',
 			'fileUpload' => true,
 		);
 

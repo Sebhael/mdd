@@ -2,28 +2,33 @@
 #back-btn { display: block; }
 </style>
 <div class="content">
+
+    <?php echo $this->session->flashdata('deletion');?>
+
 	<ul data-role="listview" data-inset="true">
-    <li data-role="list-divider">Open Tasks <span class="ui-li-count">2</span></li>
+    <li data-role="list-divider">Open Tasks <span class="ui-li-count"><?=count($tasks)?></span></li>
 
-    <li><a href="index.html">
-        <h2>TaskManager: Facebook Sessioning</h2>
-        <p>Should probably get the Facebook library to actually push to a session, so that API is being used, eh?</p>
-        <p class="ui-li-aside">Due: <strong>11:00</strong>PM</p>
-    </a></li>
-    <li><a href="index.html">
-        <h2>TaskManager: Task CRUD</h2>
-        <p>I think the point of TaskManager is to create tasks...which isn't possible right now, working on it.</p>
-        <p class="ui-li-aside">Due: <strong>11:00</strong>AM</p>
+    <?php foreach ($tasks as $task): ?>
+
+    <li><a href="<?= base_url(); ?>task/listing/<?=$task['owner']?>/<?=$task['slug']?>">
+        <h2><?=$task['title']?></h2>
+        <p><?=$task['notes']?></p>
+        <p class="ui-li-aside">Due: <strong>6:13</strong>PM</p>
     </a></li>
 
-    <li data-role="list-divider">Recently Closed <span class="ui-li-count">1</span></li>
+    <?php endforeach; ?>
 
-    <li><a href="<?php echo base_url(); ?>task/listing" data-transition="slide">
-        <h2>TaskManager: Listing View</h2>
-        <img src="<?php echo base_url(); ?>test/task_ico.png" />
-        <p>Obviously complete, else you wouldn't be looking at this right now! Also has an icon, oooooh...</p>
+    <li data-role="list-divider">Recently Closed</li>
+
+    <?php foreach ($comp as $task): ?>
+
+    <li><a href="<?= base_url(); ?>task/listing/<?=$task['owner']?>/<?=$task['slug']?>">
+        <h2><?=$task['title']?></h2>
+        <p><?=$task['notes']?></p>
         <p class="ui-li-aside">Done: <strong>6:13</strong>PM</p>
     </a></li>
+
+    <?php endforeach; ?>
 
     <li><a href="index.html">Task Archive</a></li>
 </ul>

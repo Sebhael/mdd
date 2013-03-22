@@ -1,13 +1,20 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
-	
+
+	/**
+	 * Constructor
+	 */
 	public function __construct()
 	{
 		parent::__construct();
 		$this->load->model('users_model');
+		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 	}
 
+	/**
+	 * Index Controller
+	 */
 	public function index()
 	{
 		$data['pageTitle'] = 'Login / Register';
@@ -16,28 +23,45 @@ class Auth extends CI_Controller {
 		$this->load->view('inc/container', $data);
 	}
 
+	/**
+	 * Process (Non-Facebook Login) Authentication
+	 */
 	public function process()
 	{
-		// dc724af18fbdd4e59189f5fe768a5f8311527050
+		/* Check Validation Rules (@app/config/form_validation.php) */
+		if($this->form_validation->run() == FALSE)
+		{
+			/* Apparently we are lacking a username or password in the field...shame on you...*/
+			$this->index();
+		}
 
+		/* Send to users_model to validate the user's credentials to the database */
+		$validate = $this->users_model->validate();
 
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-
-		/* Testing */
-		$username = 'Testing';
-		$password = 'testing';
-		## End
-
-		$password = sha1($password);
-
-		$this->db->where('username', $username);
-		$this->db->where('password', $password);
-		$query = $this->db->get('users');
-
-		print_r($query->result()); exit();	
+		if($validate) // If a match...
+		{
+			/* Session Vars */
+			$session = array(
+					'logged' => 1,
+					'username' => $validate['username'],
+					'uid' => $validate['id']
+				);
+			/* Set Session Data */
+			$this->session->set_userdata($session);
+			/* Successful Login Message @TODO--MSG_SUCCESS Constant */
+			$this->session->flashdata('test','testing');
+			/* Carry on my friend, and bring me back some beer...*/
+			redirect(base_url(),'refresh');
+		} else {
+			/* Username or Password doesn't exist, send back to the form */
+			/* @TODO--Additional validation/response information */
+			$this->index();
+		}
 	}
 
+	/**
+	 * Process (Facebook) Authentication
+	 */
 	public function facebook() 
 	{
 		$fbConfig = array(
@@ -64,6 +88,22 @@ class Auth extends CI_Controller {
 		$data['pageTitle'] = 'Facebook Register';
 		$data['mainBlock'] = 'auth/facebook';
 		$this->load->view('inc/container', $data);
+	}
+
+	public function register()
+	{
+		$reg = $this->users_model->register();
+	}
+
+	/**
+	 * Logoff Controller
+	 *
+	 * I didn't want to be here anyways.
+	 */ 
+	public function logoff()
+	{
+		$this->session->sess_destroy();
+		$this->index();
 	}
 
 }

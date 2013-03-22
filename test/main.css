@@ -17,6 +17,8 @@ h2 { color: #e1c140; text-shadow: 1px 1px 0 #000000;  }
 	float: right;
 }
 
+#footer { background: #2e2923; border: none; }
+
 /* 
 Breakpoint @ 576px
 Everything will assume a standard "desktop" view here.	
@@ -46,3 +48,5 @@ Mobile View
 	#expand { width: 33%;}
 	#logo { text-align: center; }
 }
+
+.success { padding:5px; font-weight: bold; background: green; margin: 5px 0; }
