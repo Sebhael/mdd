@@ -2,6 +2,7 @@ TaskManager
 ------------------------
 Manages Tasks, and stuff. 
 
+At the current time, generic authentication is working. Not registration, or Facebook/Google/Twitter integration. The SQL dump will come with your generic user (username: Testing, password: testing). 
 
 Installation
 ------------------------
@@ -10,6 +11,11 @@ Installation
 
 Other than that -- default SQL database dump is in /_assets.
 
-At the current time, generic authentication is working. Not registration, or Facebook/Google/Twitter integration. The SQL dump will come with your generic user (username: Testing, password: testing). 
+Possible Errors
+------------------------
+I've been getting numerous reports that the application doesn't even load for anyone else. I personally use WAMP as my local development package; **I did have to enable the CURL (PHP) & Mod_Rewrite (APACHE) modules** on all of the machines I've developed this application so far. Though -- every machine has been Windows/WAMP, so the cross platform local hosting could play a key on this. 
 
-This is of course, assuming that my reviewer has not already downloaded my project for testing -- if not, I will be making the commit of current progress in about an hour and a half or so (at work, no way to commit here).
+~Thanks
+
+
+
