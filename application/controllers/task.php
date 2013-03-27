@@ -54,6 +54,7 @@ class Task extends CI_Controller {
 			$this->index();
 		} else {
 			$data['task'] = $this->tasks_model->listing($id,$slug);
+			$data['notes'] = $this->tasks_model->get_notes($data['task']['id']);
 		}
 		$data['pageTitle'] = $data['task']['title'];
 		$data['mainBlock'] = 'task/listing';
@@ -61,10 +62,25 @@ class Task extends CI_Controller {
 	}
 
 	public function process() {
+		// @ TODO add validation
 		$go = $this->tasks_model->add();
-		$url = base_url() . 'task/listing/' . $go;
+
+		$url = base_url() . 'task/listing/' . $this->session->userdata('uid') . '/' . $go;
 		$this->session->set_flashdata('success','<div class="success">Task Created!</div>');
 		redirect($url);
+	}
+
+	public function comment()
+	{
+		// If there's something in the file field
+		if( @$_FILES['asset'] != '')
+		{
+		}
+		$go = $this->tasks_model->addcomment();
+		if($go)
+		{
+			redirect($this->input->post('redirect'));
+		}
 	}
 
 	public function delete($id)

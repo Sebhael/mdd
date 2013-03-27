@@ -17,6 +17,8 @@ h2 { color: #e1c140; text-shadow: 1px 1px 0 #000000;  }
 	float: right;
 }
 
+#page { background: url('stripes.png');}
+
 #footer { background: #2e2923; border: none; }
 
 /* 

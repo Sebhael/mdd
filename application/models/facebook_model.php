@@ -5,15 +5,22 @@ class Facebook_model extends CI_model {
 	{
 		parent::__construct();
 
+		/**
+		* Facebook API Configuration
+		*/
 		$config = array(
 			'appId' => '118757384981558',
 			'secret' => 'b8661a50b28b325634ea1fceb6d31572',
 			'fileUpload' => true,
+			'cookie' => true
 		);
 
+		/* Load our Facebook library */
 		$this->load->library('Facebook', $config);
 
-		$profile = null;
+		$user = $this->facebook->getUser();
+		$profile = null; // We'll build off this for the user.
+
 		if($user)
 		{
 			try {
@@ -31,7 +38,8 @@ class Facebook_model extends CI_model {
 				'loginUrl' => $this->facebook->getLoginUrl(
 					array(
 						'scope' => 'email, publish_stream',
-						'redirect_uri' => $this->uri->base_url()
+						'redirect_uri' => base_url() . 'auth/facebook',
+						'code' => $_GET['code']
 						)
 					),
 						'logoutUrl' => $this->facebook->getLogoutUrl(),

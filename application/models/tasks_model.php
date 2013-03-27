@@ -7,20 +7,37 @@ class Tasks_model extends CI_Model
 		parent::__construct();
 	}
 
+	/**
+	 * User Tasks
+	 *
+	 * Retreive all non-completed tasks for the logged in user.
+	 */
 	public function usertasks()
 	{
 		$get = $this->db->get_where('tasks', array('tasks.owner' => $this->session->userdata('uid'), 'tasks.completed' => '0'));
 		return $get->result_array();
 	}
-
-	public function recentcomp()
+	/**
+	 * Recently Completed
+	 *
+	 * Get completed tasks
+	 *
+	 * If called from the tasks index, it will limit to 3; but more will be pulled via controller declaration for the archive.
+	 */
+	public function recentcomp($limit = 3)
 	{
-		$get = $this->db->get_where('tasks', array('tasks.owner' => $this->session->userdata('uid'), 'tasks.completed' => '1'), 3);
+		$get = $this->db->get_where('tasks', array('tasks.owner' => $this->session->userdata('uid'), 'tasks.completed' => '1'), $limit);
 		return $get->result_array();
 	}
 
+	/**
+	 * Add a new Tasks
+	 *
+	 * Insert a new Task
+	 */
 	public function add()
 	{
+		// Modify the inputted due date for 
 		$duedate = $this->input->post('duedate');
 		if($duedate == '') {
 			$duedate = '0000-00-00';
@@ -63,4 +80,37 @@ class Tasks_model extends CI_Model
 		return;
 	}
 
+	public function addcomment($file = '')
+	{
+		$id = $this->input->post('taskid');
+		$sql = array(
+			'note' => $this->input->post('notes'),
+			'task' => $this->input->post('taskid'),
+			'owner' => $this->session->userdata('uid'),
+			'submitted' => date('Y-m-d H:i:s')
+			);
+		$insert = $this->db->insert('comments', $sql);
+		if($insert)
+		{
+			return TRUE;
+		}
+		else
+		{
+			die(mysql_error());
+		}
+	}
+
+	public function get_notes($id)
+	{
+		$this->db->select('*');
+		$this->db->from('comments');
+		$this->db->where('task', $id);
+		$this->db->join('users', 'users.id = comments.owner');
+		$get = $this->db->get();
+		if($get)
+		{
+			return $get->result_array();
+		}
+		//$comments = $this->db->get_where('comments', array('comments.task' => $id));
+	}
 }

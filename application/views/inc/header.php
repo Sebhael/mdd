@@ -12,7 +12,7 @@
 
 <body>
 
-<div data-role="page">
+<div data-role="page" id="page">
 
 	<div id="mobile-head" data-role="header">
 		<a href="" data-rel="back" data-role="button" data-mini="true" data-icon="back" data-transition="flip" data-theme="a" data-inline="true" id="back-btn" class="ui-btn-left">Back</a>
@@ -40,6 +40,6 @@
         <li id="expand"><a href="<?php echo base_url(); ?>task/lists" data-transition="flip">Lists</a></li>
         <li id="expand"><a href="#">Groups</a></li>
         <li class="hide"><a href="#">Something</a></li>
-        <li class="hide"><a href="#">Support</a></li>
+        <li class="hide"><a href="<?php echo base_url();?>portal/support">Support</a></li>
     </ul>
 	</div><!-- /navbar -->

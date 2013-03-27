@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 22, 2013 at 08:29 PM
+-- Generation Time: Mar 26, 2013 at 09:57 PM
 -- Server version: 5.5.24-log
 -- PHP Version: 5.4.3
 
@@ -19,6 +19,32 @@ SET time_zone = "+00:00";
 --
 -- Database: `taskman`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `note` text NOT NULL,
+  `task` int(11) NOT NULL,
+  `owner` int(11) NOT NULL,
+  `submitted` datetime NOT NULL,
+  `reported` tinyint(4) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `note`, `task`, `owner`, `submitted`, `reported`) VALUES
+(1, '0', 10, 1, '2013-03-26 21:46:19', 0),
+(2, '0', 10, 1, '2013-03-26 21:47:39', 0),
+(3, '0', 10, 1, '2013-03-26 21:49:08', 0),
+(4, '0', 10, 1, '2013-03-26 21:49:48', 0);
 
 -- --------------------------------------------------------
 
@@ -40,7 +66,16 @@ CREATE TABLE IF NOT EXISTS `tasks` (
   `completed_stamp` datetime NOT NULL,
   `reported` tinyint(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table `tasks`
+--
+
+INSERT INTO `tasks` (`id`, `title`, `slug`, `notes`, `duedate`, `duetime`, `owner`, `access`, `created`, `completed`, `completed_stamp`, `reported`) VALUES
+(10, 'Testing Task', 'testing-task', 'This is a test foo', '0000-00-00', '00:00:00', 1, 1, '2013-03-26 13:52:43', 0, '0000-00-00 00:00:00', 0),
+(11, 'Testing Task 2', 'testing-task-2', 'This is a test!', '0000-00-00', '00:00:00', 1, 1, '2013-03-26 13:58:09', 0, '0000-00-00 00:00:00', 0),
+(12, 'Testing Task 2', 'testing-task-2', 'This is a test!', '0000-00-00', '00:00:00', 1, 1, '2013-03-26 14:00:07', 0, '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 

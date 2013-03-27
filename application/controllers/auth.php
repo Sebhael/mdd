@@ -24,7 +24,7 @@ class Auth extends CI_Controller {
 	}
 
 	/**
-	 * Process (Non-Facebook Login) Authentication
+	 * Process Login Auth
 	 */
 	public function process()
 	{
@@ -57,37 +57,6 @@ class Auth extends CI_Controller {
 			/* @TODO--Additional validation/response information */
 			$this->index();
 		}
-	}
-
-	/**
-	 * Process (Facebook) Authentication
-	 */
-	public function facebook() 
-	{
-		$fbConfig = array(
-				'appId' => '118757384981558',
-				'secret' => 'b8661a50b28b325634ea1fceb6d31572'
-			);
-		$this->load->library('facebook', $fbConfig);
-
-		$user = $this->facebook->getUser();
-
-		if ($user) {
-			try {
-				$data['user_profile'] = $this->facebook->api('/me');
-			} catch (FacebookApiException $e) {
-				$user = null;
-			}
-		}
-		if ($user) {
-			$data['logout_url'] = $this->facebook->getLogoutUrl();
-		} else {
-			$data['login_url'] = $this->facebook->getLoginUrl();
-		}
-
-		$data['pageTitle'] = 'Facebook Register';
-		$data['mainBlock'] = 'auth/facebook';
-		$this->load->view('inc/container', $data);
 	}
 
 	public function register()

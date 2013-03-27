@@ -2,11 +2,11 @@
 #back-btn { display: block; }
 textarea { resize: none;}
 .nested { background: #37322c; border-radius: 5px; }
+.note { padding: 5px; background: #2c2a27; border-radius: 5px }
 </style>
 <div class="content">
 
 	<?php echo $this->session->flashdata('success'); ?>
-
 	<h3 style="text-align: center;"><?php echo $task['title'];?></h3>
 	<small><em><strong>Started At</strong>: <?php echo reverse_date($task['created']);?></em></small>
 	<small style="float:right"><em><strong>Completed At</strong>: <?php echo reverse_date($task['created']);?></em></small>
@@ -20,13 +20,22 @@ textarea { resize: none;}
 	    <div class="ui-block-b"><a href="#delete" data-rel="popup" data-role="button" data-icon="delete" data-iconpos="right" data-theme="e">Delete</a></div>
 	</fieldset>
 
+	<?php foreach ($notes as $note): ?>
+		<strong><?=$note['username']?></strong>
+		<p class="note">
+			<?=$note['note']?>
+		</p>
+	<?php endforeach; ?>
+
 	<h3>Add A Note</h3>
-	<form action="task/addcomment" method="post">
-		<label for="comment">Notes</label>
-		<textarea id="notes" name="id"></textarea>
+	<form action="<?php echo base_url();?>task/comment" method="post" data-ajax="false">
+		<label for="notes">Notes</label>
+		<textarea id="notes" name="notes"></textarea>
 		<label for="asset">Add a File</label>
 		<input type="file" name="asset" id="asset" />
-		<a href="#" data-role="button">Submit Note</a>
+		<input type="hidden" name="taskid" id="taskid" value="<?php echo $task['id'] ?>" />
+		<input type="hidden" name="redirect" id="redirect" value="<?php echo current_url(); ?>" />
+		<input type="submit" name="submit" id="submit" value="Submit" />
 	</form>
 
 </div>
