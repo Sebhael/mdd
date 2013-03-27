@@ -14,6 +14,12 @@ class Task extends CI_Controller {
 		}
 	}
 
+	/**
+	 * ## VIEW FUNCTIONS ##
+	 *
+	 * The following functions render views.
+	 */ 
+
 	public function index()
 	{
 		$data['pageTitle'] = 'Home Page';
@@ -30,6 +36,7 @@ class Task extends CI_Controller {
 		$data['comp'] = $this->tasks_model->recentcomp();
 		$data['pageTitle'] = 'Task List';
 		$data['mainBlock'] = 'task/list';
+		$data['modules'] = array('placeholder');
 		$this->load->view('/inc/container', $data);
 	}
 
@@ -40,6 +47,7 @@ class Task extends CI_Controller {
 	{
 		$data['pageTitle'] = 'Adding a Task';
 		$data['mainBlock'] = 'task/add_form';
+		$data['modules'] = array('placeholder');
 		$this->load->view('/inc/container', $data);
 	}
 
@@ -56,10 +64,38 @@ class Task extends CI_Controller {
 			$data['task'] = $this->tasks_model->listing($id,$slug);
 			$data['notes'] = $this->tasks_model->get_notes($data['task']['id']);
 		}
+		if( ( $data['task']['access'] == 1) and ($this->session->userdata('uid') != $data['task']['owner']) )
+		{
+			redirect(base_url());
+		}
 		$data['pageTitle'] = $data['task']['title'];
+		$data['modules'] = array('placeholder');
 		$data['mainBlock'] = 'task/listing';
 		$this->load->view('/inc/container', $data);
 	}
+
+	public function edit($id, $slug)
+	{
+		$get = $this->tasks_model->listing($id, $slug);
+		if(count($get) > 0)
+		{
+			$data['form'] = $get;
+		}
+		else
+		{
+			redirect(base_url());
+		}
+		$data['pageTitle'] = 'Editing A Task';
+		$data['mainBlock'] = 'task/edit';
+		$data['modules'] = array('placeholder');
+		$this->load->view('/inc/container', $data);
+	}
+
+	/**
+	 * ## PROCESSING FUNCTIONS ##
+	 *
+	 * The following functions are used for CRUD purposes.
+	 */
 
 	public function process() {
 		// @ TODO add validation
@@ -67,6 +103,14 @@ class Task extends CI_Controller {
 
 		$url = base_url() . 'task/listing/' . $this->session->userdata('uid') . '/' . $go;
 		$this->session->set_flashdata('success','<div class="success">Task Created!</div>');
+		redirect($url);
+	}
+
+	public function processe()
+	{
+		$go = $this->tasks_model->edit();
+		$url = base_url() . 'task/listing/' . $this->session->userdata('uid') . '/' . $go;
+		$this->session->set_flashdata('success_e', '<div class="success">Task Edited!</div>');
 		redirect($url);
 	}
 
@@ -83,10 +127,35 @@ class Task extends CI_Controller {
 		}
 	}
 
+	public function complete($id)
+	{
+		$redirect = $this->session->flashdata('redirect'); 
+		$go = $this->tasks_model->complete($id);
+
+		$this->session->set_flashdata('success_c','<div class="success">Task Completed!</div>');
+		redirect($redirect, 'refresh');
+	}
+
 	public function delete($id)
 	{
 		$go = $this->tasks_model->delete($id);
 		$this->session->set_flashdata('deletion','<div class="success">Task Successfully Deleted</div>');
 		redirect('task/lists');
+	}
+
+	public function delete_c($id)
+	{
+		$redirect = $this->session->flashdata('redirect'); 
+		$go = $this->tasks_model->delete_c($id);
+		$this->session->set_flashdata('deletion_n','<div class="success">Note Deleted Successfully!</div>');
+		redirect($redirect);
+	}
+
+	public function report($id)
+	{
+		$redirect = $this->session->flashdata('redirect'); 
+		$go = $this->tasks_model->report($id);
+		$this->session->set_flashdata('reported','<div class="success">This task has been reported. A staff member will be looking into the matter soon. Thank you.</div>');
+		redirect($redirect);
 	}
 }

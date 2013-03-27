@@ -19,6 +19,7 @@ class Auth extends CI_Controller {
 	{
 		$data['pageTitle'] = 'Login / Register';
 		$data['mainBlock'] = 'auth/form';
+		$data['modules'] = array('placeholder');
 		$data['test'] = 'We be loggin in and regisrurin an stuffz';
 		$this->load->view('inc/container', $data);
 	}
@@ -61,7 +62,19 @@ class Auth extends CI_Controller {
 
 	public function register()
 	{
-		$reg = $this->users_model->register();
+		$reg = $this->users_model->insert();
+		if($reg)
+		{
+			/* Successful Login Message @TODO--MSG_SUCCESS Constant */
+			$this->session->set_flashdata('success_r','<div class="success">You\'ve successfully registered! You can now log in below!</div>');
+			/* Carry on my friend, and bring me back some beer...*/
+			$this->index();
+		}
+		else
+		{
+			$this->session->set_flashdata('error', '<div class="error">I am error.</div>');
+			$this->index();
+		}
 	}
 
 	/**
@@ -72,7 +85,7 @@ class Auth extends CI_Controller {
 	public function logoff()
 	{
 		$this->session->sess_destroy();
-		$this->index();
+		redirect(base_url());
 	}
 
 }

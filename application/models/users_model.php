@@ -32,7 +32,21 @@ class Users_model extends CI_Model {
 
 	public function insert()
 	{
-		$sql = array();
+		$sql = array(
+			'username' => $this->input->post('username'),
+			'password' => sha1($this->input->post('password')),
+			'email' => $this->input->post('email'),
+			'created_at' => date("Y-m-d H:i:s")
+			);
+		$register = $this->db->insert('users', $sql);
+		if($register)
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
 	}
 
 	public function get_profile($id)

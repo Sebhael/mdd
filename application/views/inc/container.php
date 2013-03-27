@@ -6,7 +6,10 @@
 
 <div class="sidebar">
 	<div data-role="content">
-	<h3>Sidebar Stuffs</h3>
+	<?php foreach($modules as $module) {
+		$this->load->view('/modules/'.$module);
+	}
+	?>
 </div>
 </div>
 

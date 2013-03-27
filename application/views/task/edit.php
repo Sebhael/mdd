@@ -3,14 +3,15 @@
 #back-btn { display: block; }
 #due-hide { display:none;}
 </style>
+<?php print_r($form); ?>
 	<div class="content">
-		<form action="<?=base_url();?>task/process" method="post" data-ajax="false">
+		<form action="<?=base_url()?>task/processe" method="post" data-ajax="false">
 			<label for="title">Title</label>
-				<input type="text" id="title" name="title" />
+				<input type="text" id="title" name="title" value="<?=$form['title']?>" />
 			<label for="notes">Notes</label>
-				<textarea name="notes" id="notes"></textarea>
+				<textarea name="notes" id="notes"><?=$form['notes']?></textarea>
 			<label for="duetime">Due Time?</label>
-				<input type="time" name="duetime" id="duetime" />
+				<input type="time" name="duetime" id="duetime" value="<?=$form['duetime']?>" />
 			<label for="is-due">Due Date?</label>
 				<select name="is-due" id="is-due" data-role="slider">
 	    			<option value="no" selected="">No</option>
@@ -18,7 +19,7 @@
 				</select>
 			<div id="due-hide">
 				<label for="duedate">Due Date</label>
-				<input type="date" name="duedate" id="duedate" value="">
+				<input type="date" name="duedate" id="duedate" value="<?=$form['duedate']?>">
 			</div>
 
 			<fieldset data-role="controlgroup" data-type="horizontal" data-mini="false">
@@ -30,8 +31,9 @@
 		        <input type="radio" name="access" id="access-pub" value="3">
 		        <label for="access-pub">Public</label>
 			</fieldset>
+			<input type="hidden" name="taskid" id="taskid" value="<?=$form['id']?>" />
 			<p>
-				<input type="submit" name="addtask" id="addtask" value="Add Task" />
+				<input type="submit" name="edittask" id="edittask" value="Edit Task" />
 			</p>
 		</form>
 	</div><!-- /content -->

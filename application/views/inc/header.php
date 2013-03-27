@@ -22,7 +22,10 @@
 
     <?php if($this->session->userdata('logged') == 1) { ?>
         <span style="float: right;padding:5px;">
-            Logged in as: <strong><a href="members/profile"><?php echo ucfirst($this->session->userdata('username')); ?></a></strong></span>
+            Logged in as: <strong><a href="<?=base_url()?>members/profile"><?php echo ucfirst($this->session->userdata('username')); ?></a></strong>
+            ( <a href="<?=base_url()?>auth/logoff">Logoff</a> )
+        </span>
+
     <?php } ?>
 
 	<h1 id="logo"><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url();?>test/logo.png"/></a></h1>
@@ -34,7 +37,7 @@
         		if($this->session->userdata('logged') == '') { ?>
         		<a href="<?php echo base_url(); ?>auth" data-transition="flip" id="login-btn">Login</a>
         		<?php } else { ?>
-        	<a href="<?php echo base_url();?>task/add" data-transition="slide">Add</a>
+        	<a href="<?php echo base_url();?>task/add" data-transition="slide" id="login-btn">Add</a>
         	<?php } ?>
         </li>
         <li id="expand"><a href="<?php echo base_url(); ?>task/lists" data-transition="flip">Lists</a></li>

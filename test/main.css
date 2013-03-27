@@ -52,3 +52,5 @@ Mobile View
 }
 
 .success { padding:5px; font-weight: bold; background: green; margin: 5px 0; }
+
+#foothref { text-decoration: none; }

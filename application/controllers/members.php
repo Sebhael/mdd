@@ -26,11 +26,12 @@ class Members extends CI_Controller {
 		}
 		$data['pageTitle'] = $data['member']['username']."'s Profile";
 		$data['mainBlock'] = 'members/profile';
+		$data['modules'] = array('placeholder');		
 		$this->load->view('/inc/container', $data); 
 	}
 
 	public function memberlist()
 	{
-
+		
 	}
 }

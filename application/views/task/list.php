@@ -13,7 +13,9 @@
     <li><a href="<?= base_url(); ?>task/listing/<?=$task['owner']?>/<?=$task['slug']?>">
         <h2><?=$task['title']?></h2>
         <p><?=$task['notes']?></p>
-        <p class="ui-li-aside">Due: <strong>6:13</strong>PM</p>
+        <?php if($task['duedate'] != '0000-00-00'): ?>
+            <p class="ui-li-aside">Due: <?=reverse_datetime($task['duedate'])?></p>
+        <?php endif; ?>
     </a></li>
 
     <?php endforeach; ?>
@@ -25,7 +27,7 @@
     <li><a href="<?= base_url(); ?>task/listing/<?=$task['owner']?>/<?=$task['slug']?>">
         <h2><?=$task['title']?></h2>
         <p><?=$task['notes']?></p>
-        <p class="ui-li-aside">Done: <strong>6:13</strong>PM</p>
+        <p class="ui-li-aside">Done: <?=reverse_datetime($task['completed_stamp'])?></p>
     </a></li>
 
     <?php endforeach; ?>

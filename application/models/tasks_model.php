@@ -61,6 +61,35 @@ class Tasks_model extends CI_Model
 		}
 	}
 
+	public function edit()
+	{
+
+		$duedate = $this->input->post('duedate');
+		if($duedate == '') {
+			$duedate = '0000-00-00';
+		}
+		
+		$data = array(
+			'title' => $this->input->post('title'),
+			'slug' => slugIt($this->input->post('title')),
+			'notes' => $this->input->post('notes'),
+			'duedate' => $duedate,
+			'owner' => $this->session->userdata('uid'),
+			'access' => $this->input->post('access'),
+			'edited' => date("Y-m-d H:i:s")
+			);
+
+		$update = $this->db->update('tasks', $data, array('tasks.id' => $this->input->post('taskid')));
+		if($update)
+		{
+			return $data['slug'];
+		}
+		else
+		{
+			die(mysql_error());
+		}
+	}
+
 	public function listing($id, $slug)
 	{
 		$get = $this->db->get_where("tasks", array('tasks.owner' => $id, 'tasks.slug' => $slug));
@@ -77,6 +106,13 @@ class Tasks_model extends CI_Model
 	public function delete($id)
 	{
 		$this->db->delete('tasks', array('tasks.id' => $id));
+		return;
+	}
+
+	public function delete_c($id)
+	{
+		$del = $this->db->delete('comments', array('comments.noteid' => $id));
+		if(!$del) { die(mysql_error()); }
 		return;
 	}
 
@@ -105,12 +141,42 @@ class Tasks_model extends CI_Model
 		$this->db->select('*');
 		$this->db->from('comments');
 		$this->db->where('task', $id);
-		$this->db->join('users', 'users.id = comments.owner');
+		$this->db->join('users', 'users.id = comments.owner', 'left');
 		$get = $this->db->get();
 		if($get)
 		{
 			return $get->result_array();
 		}
-		//$comments = $this->db->get_where('comments', array('comments.task' => $id));
+	}
+
+	public function complete($id)
+	{
+		$data = array(
+				'completed' => 1,
+				'completed_stamp' => date('Y-m-d H:i:s')
+			);	
+		$go = $this->db->update('tasks', $data, array('tasks.id'=>$id));
+		if($go)
+		{
+			return TRUE;
+		}
+		else
+		{
+			die(mysql_error());
+		}
+	}
+
+	public function report($id)
+	{
+		$go = $this->db->update('tasks', array('tasks.reported'=>1),array('tasks.id'=>$id));
+		
+		if($go)
+		{
+			return TRUE;
+		}
+		else
+		{
+			die(mysql_error());
+		}
 	}
 }
