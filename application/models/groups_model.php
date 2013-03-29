@@ -1,14 +1,16 @@
 <?php
 class Groups_model extends CI_Model
 {
+	public function getall()
+	{
+		$this->db->select('*')
+			->from('groups')
+			->where('groups.owner', $this->session->userdata('uid'));
+		$get = $this->db->get();
+		return $get->result_array();
+	}
 	public function get($id)
 	{
-		/*$this->db->select('*')
-			->from('groups')
-			->where('groups.id',$id)
-			->join('group_member','group_member.group = groups.id', 'left')
-			->join('users', 'group_member.member = users.id','left');
-			*/
 		$this->db->select('*')
 			->from('group_member')
 			->where('group_member.group', $id)

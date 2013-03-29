@@ -1,2 +1,2 @@
 <h3 style="padding: 0; margin: 0">Sponsors</h3>
-<a href="http://riftgame.com/"><img src="<?=base_url()?>test/ad.jpg" /></a>
+<a href="https://rift.trionworlds.com/account/reg/account-registration-short-flow.action?voucherCode=CLJGY6MDMWR2KFEYDQXZ&request_locale=en&experience=aaf&utm_source=manual&utm_medium=social&utm_campaign=ascend_invite"><img src="<?=base_url()?>test/ad.jpg" /></a>

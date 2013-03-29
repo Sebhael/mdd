@@ -6,10 +6,17 @@ class Groups extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('groups_model');
+
+		/* Filthy unauthed scoundrels have no place here, shoo */
+		if($this->session->userdata('logged') == '')
+		{
+			redirect('/auth', "redirect");
+		}
 	}
 
 	public function index()
 	{
+		$data['stuff'] = $this->groups_model->getall();
 		$data['pageTitle'] = 'Task List';
 		$data['mainBlock'] = 'groups/index';
 		$data['modules'] = array('placeholder');
