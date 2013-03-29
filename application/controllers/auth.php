@@ -45,7 +45,8 @@ class Auth extends CI_Controller {
 			$session = array(
 					'logged' => 1,
 					'username' => $validate['username'],
-					'uid' => $validate['id']
+					'uid' => $validate['id'],
+					'admin' => $validate['admin']
 				);
 			/* Set Session Data */
 			$this->session->set_userdata($session);
