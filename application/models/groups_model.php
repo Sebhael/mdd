@@ -3,11 +3,19 @@ class Groups_model extends CI_Model
 {
 	public function get($id)
 	{
-		$this->db->select('*')
+		/*$this->db->select('*')
 			->from('groups')
-			->where('groups.id',$id);
+			->where('groups.id',$id)
+			->join('group_member','group_member.group = groups.id', 'left')
+			->join('users', 'group_member.member = users.id','left');
+			*/
+		$this->db->select('*')
+			->from('group_member')
+			->where('group_member.group', $id)
+			->join('groups', 'groups.id = group_member.group', 'left')
+			->join('users', 'group_member.member = users.id', 'right');
 		$q = $this->db->get();
-		return $q->row(); 
+		return $q->result_array(); 
 	}
 
 	public function insert()

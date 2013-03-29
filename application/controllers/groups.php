@@ -33,7 +33,7 @@ class Groups extends CI_Controller
 		}
 		$data['group'] = $this->groups_model->get($id);
 
-		$data['pageTitle'] = $data['group']->name;
+		$data['pageTitle'] = 'A Group!';
 		$data['mainBlock'] = 'groups/listing';
 		$data['modules'] = array('placeholder');
 		$this->load->view('/inc/container', $data);
