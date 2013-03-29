@@ -13,6 +13,9 @@ textarea { resize: none;}
 	echo $this->session->flashdata('success_e'); echo $this->session->flashdata('reported')
 	?>
 	<h3 style="text-align: center;"><?php echo $task['title'];?></h3>
+	<?php if(@$pro != ''): ?>
+	<h4 style="text-align:center"><?php echo $pro; ?></h4>
+	<?php endif; ?>
 
 	<small><em><strong>Started At</strong>: <?php echo reverse_datetime($task['created']);?></em></small>
 	<?php if ($task['completed'] == 0): ?>

@@ -14,7 +14,7 @@ class Tasks_model extends CI_Model
 	 */
 	public function usertasks()
 	{
-		$get = $this->db->get_where('tasks', array('tasks.owner' => $this->session->userdata('uid'), 'tasks.completed' => '0'));
+		$get = $this->db->order_by('duedate','DESC')->get_where('tasks', array('tasks.owner' => $this->session->userdata('uid'), 'tasks.completed' => '0'));
 		return $get->result_array();
 	}
 	/**
@@ -37,6 +37,21 @@ class Tasks_model extends CI_Model
 	 */
 	public function add()
 	{
+		$title = $this->input->post('title');
+
+		$name = preg_replace("/\([^)]+\)/","",$title);
+		$project = preg_match('#\((.*?)\)#', $title, $match);
+		if($project == '')
+		{
+			$project = NULL;
+			$pro_slug = NULL;
+		}
+		else
+		{
+			$project = $match[1];
+			$pro_slug = slugIt($project);
+		}
+
 		// Modify the inputted due date for 
 		$duedate = $this->input->post('duedate');
 		if($duedate == '') {
@@ -44,10 +59,13 @@ class Tasks_model extends CI_Model
 		}
 
 		$sqldata = array(
-			'title' => $this->input->post('title'),
-			'slug' => slugIt($this->input->post('title')),
+			'title' => $name,
+			'slug' => slugIt($name),
 			'notes' => $notes = $this->input->post('notes'),
 			'duedate' => $duedate,
+			'duetime' => $this->input->post('duetime'),
+			'project' => $project,
+			'projectSlug' => slugIt($project),
 			'owner' => $this->session->userdata('uid'),
 			'access' => $this->input->post('access'),
 			'created' => date("Y-m-d H:i:s")
@@ -64,19 +82,37 @@ class Tasks_model extends CI_Model
 	public function edit()
 	{
 
+		$title = $this->input->post('title');
+
+		$name = preg_replace("/\([^)]+\)/","",$title);
+		$project = preg_match('#\((.*?)\)#', $title, $match);
+		if($project == '')
+		{
+			$project = NULL;
+			$pro_slug = NULL;
+		}
+		else
+		{
+			$project = $match[1];
+			$pro_slug = slugIt($project);
+		}
+
 		$duedate = $this->input->post('duedate');
 		if($duedate == '') {
 			$duedate = '0000-00-00';
 		}
 		
 		$data = array(
-			'title' => $this->input->post('title'),
-			'slug' => slugIt($this->input->post('title')),
-			'notes' => $this->input->post('notes'),
+			'title' => $name,
+			'slug' => slugIt($name),
+			'notes' => $notes = $this->input->post('notes'),
 			'duedate' => $duedate,
+			'duetime' => $this->input->post('duetime'),
+			'project' => $project,
+			'projectSlug' => slugIt($project),
 			'owner' => $this->session->userdata('uid'),
 			'access' => $this->input->post('access'),
-			'edited' => date("Y-m-d H:i:s")
+			'created' => date("Y-m-d H:i:s")
 			);
 
 		$update = $this->db->update('tasks', $data, array('tasks.id' => $this->input->post('taskid')));
@@ -178,5 +214,19 @@ class Tasks_model extends CI_Model
 		{
 			die(mysql_error());
 		}
+	}
+
+	public function get_projects($slug, $id)
+	{
+		$this->db->select('*')
+			->from('tasks')
+			->where('id !=', $id)
+			->where('projectSlug', $slug);
+		$query = $this->db->get();
+		if($query)
+		{
+			return $query->result_array();
+		}
+
 	}
 }

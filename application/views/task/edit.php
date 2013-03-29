@@ -3,7 +3,9 @@
 #back-btn { display: block; }
 #due-hide { display:none;}
 </style>
-<?php print_r($form); ?>
+<?php if(@$pro != ''){
+	$form['title'] = $pro .''. $form['title'];
+} ?>
 	<div class="content">
 		<form action="<?=base_url()?>task/processe" method="post" data-ajax="false">
 			<label for="title">Title</label>
