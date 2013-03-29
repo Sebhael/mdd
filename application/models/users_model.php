@@ -54,4 +54,23 @@ class Users_model extends CI_Model {
 		$sql = $this->db->get_where('users', array('users.id' => $id));
 		return $sql->row_array();
 	}
+
+	public function subToggle()
+	{
+		$this->db->select('newsletter')
+			->from('users')
+			->where('users.id', $this->session->userdata('uid'));
+		$check = $this->db->get();
+
+		$nl = $check->row();
+
+		if($nl->newsletter == 1)
+		{ $value = 0; }
+		else
+		{ $value = 1; }
+	
+		$update = $this->db->update('users', array('newsletter'=>$value), array('users.id' => $this->session->userdata('uid')));
+
+		return TRUE;
+	}
 }
