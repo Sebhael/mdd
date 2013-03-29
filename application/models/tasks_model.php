@@ -152,13 +152,14 @@ class Tasks_model extends CI_Model
 		return;
 	}
 
-	public function addcomment($file = '')
+	public function addcomment($file)
 	{
 		$id = $this->input->post('taskid');
 		$sql = array(
 			'note' => $this->input->post('notes'),
 			'task' => $this->input->post('taskid'),
 			'owner' => $this->session->userdata('uid'),
+			'asset' => $file['file_name'],
 			'submitted' => date('Y-m-d H:i:s')
 			);
 		$insert = $this->db->insert('comments', $sql);

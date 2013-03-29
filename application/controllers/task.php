@@ -76,7 +76,7 @@ class Task extends CI_Controller {
 		$slug = $this->uri->segment(4);
 
 		// This is primarily to ensure we don't have an issue if there's no related tasks.
-		$add_module = 'placeholder';
+		$add_module = 'blank';
 		
 		// If there's no string to be found in the slug area, then we probably don't need to be here.
 		if($slug == '') 
@@ -191,10 +191,34 @@ class Task extends CI_Controller {
 	public function comment()
 	{
 		// If there's something in the file field
-		if( @$_FILES['asset'] != '')
+		if( @$_FILES['asset']['name'] != '')
 		{
+			// set this to nothing to avoid errors atm
+			$file = '';
+			$ext = get_ext($_FILES['asset']['name']);
+
+			$field = 'asset';
+			// Put the UID in a var, better than passing raw session info for the filename construction...
+			$uid = $this->session->userdata('uid');
+			// Adding this to the file name to help avoid file conflicts
+			$stamp = date('YmdHis');
+			$config['upload_path'] = './uploads/tasks/';
+			$config['allowed_types'] = 'gif|jpg|png';
+			$config['file_name'] = $uid . '_' . $stamp . '.' . $ext;
+			$this->load->library('upload', $config);
+			// Upload
+			if($this->upload->do_upload($field))
+			{
+				$file = $this->upload->data(); // get the data
+			}
+			else
+			{
+				// Set a flash, redirect to the task.
+				$this->session->set_flashdata('errors', $this->upload->display_errors());
+				redirect($this->input->post('redirect'));				
+			}
 		}
-		$go = $this->tasks_model->addcomment();
+		$go = $this->tasks_model->addcomment($file);
 		if($go)
 		{
 			redirect($this->input->post('redirect'));

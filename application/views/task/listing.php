@@ -50,8 +50,11 @@ textarea { resize: none;}
 				<?php endif; ?>
 			</span>
 		<p class="note">
+			<?php if($note['asset'] != ''): ?>
+			<img src="<?=base_url()?>uploads/tasks/<?=$note['asset']?>" style="width:200px;float:left; margin-right:5px;">
+			<?php endif; ?>
 			<?=$note['note']?>
-			<span style="display:block;text-align:right;font-size: 10pt;"><?=reverse_datetime($note['submitted'])?></span>
+			<span style="clear:both;display:block;text-align:right;font-size: 10pt;"><span style="float:left">Submitted At</span><?=reverse_datetime($note['submitted'])?></span>
 		</p>
 
 	<?php endforeach; ?>
@@ -59,7 +62,7 @@ textarea { resize: none;}
 	<?php if($task['completed'] == 0): ?>
 
 	<h3>Add A Note</h3>
-	<form action="<?php echo base_url();?>task/comment" method="post" data-ajax="false">
+	<form action="<?php echo base_url();?>task/comment" method="post" enctype="multipart/form-data" data-ajax="false">
 		<label for="notes">Notes</label>
 		<textarea id="notes" name="notes"></textarea>
 		<label for="asset">Add a File</label>

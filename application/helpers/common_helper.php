@@ -47,6 +47,15 @@ if(!function_exists('datediff'))
     }
 }
 
+if ( ! function_exists('get_ext') )
+{
+    function get_ext($file)
+    {
+        $ext = pathinfo($file);
+        return $ext['extension'];
+    }
+}
+
 if(!function_exists('multi_unique'))
 {
     function multi_unique($array)
