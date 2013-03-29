@@ -3,6 +3,10 @@
 	<h2>You Seem Lost...</h2>
 	<h3>FAQ / Self Help</h3>
 	<dl>
+		<dt>"Grouping" Tasks</dt>
+		<dd>You can group tasks together by adding a project name in (paranthesis) within the title field. So if you want to organize all of your tasks for becoming a wizard, you would just simply add (Wizard) before the task's name.
+			<br />I.e. (Wizard) Put on your Robe and Wizard Cap -- (Wizard) Cast Fireball 50,000 times to reach Lvl.3, etc.
+		</dd>
 		<dt>Unable to Add a Task</dt>
 		<dd>Have you tried unplugging it, and plugging it back in?</dd>
 	</dl>

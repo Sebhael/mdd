@@ -1,4 +1,5 @@
 	<div class="content">
+		<img src="<?=base_url()?>test/lolimg.png" style="width:100%" />
 		<h3>Welcome to TaskManager!</h3>
 		<p>
 		<span>TaskManager</span> is a mobile-driven application to help you manage to-do's, and tasks while on the go.

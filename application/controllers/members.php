@@ -40,4 +40,5 @@ class Members extends CI_Controller {
 		$actionjackson = $this->users_model->subToggle();
 		redirect(base_url());
 	}
+
 }

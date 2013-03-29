@@ -42,7 +42,7 @@
         </li>
         <li id="expand"><a href="<?php echo base_url(); ?>task/lists" data-transition="flip">Lists</a></li>
         <li id="expand"><a href="#">Groups</a></li>
-        <li class="hide"><a href="#">Something</a></li>
+        <li class="hide"><a href="#">Projects</a></li>
         <li class="hide"><a href="<?php echo base_url();?>portal/support">Support</a></li>
     </ul>
 	</div><!-- /navbar -->
